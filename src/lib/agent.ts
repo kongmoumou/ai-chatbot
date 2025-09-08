@@ -219,8 +219,8 @@ export const googleSearchAgent = traceable(async function* googleSearchAgent(
   const { readable, writable } = new TransformStream<AgentData, AgentData>();
   const writer = writable.getWriter();
   const resp = streamText({
-    // model: gateway('openai/gpt-5-mini'),
-    model: deepseek('deepseek-chat'),
+    model: gateway('openai/gpt-5-mini'),
+    // model: deepseek('deepseek-chat'),
     system: dedent`You are a search agent that assists users by searching the web.
     JSON
     1. When given a user query, you must first perform a google search to find relevant information.
